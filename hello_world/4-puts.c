@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
+ * main - main entry point
  * this is hard
+ * Return: 0;
  */
 int main(void)
 {
