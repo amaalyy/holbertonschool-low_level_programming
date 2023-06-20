@@ -5,16 +5,16 @@
  */
 int main(void)
 {
-	char uppercase = 'A';
 	char lowercase = 'a';
+	char uppercase = 'A';
 
-	for (; uppercase <= 'Z'; uppercase++)
-	{
-		putchar(uppercase);
-	}
 	for (; lowercase <= 'z'; lowercase++)
 	{
 		putchar(lowercase);
+	}
+	for (; uppercase <= 'Z'; uppercase++)
+	{
+		putchar(uppercase);
 	}
 	putchar('\n');
 	return (0);
