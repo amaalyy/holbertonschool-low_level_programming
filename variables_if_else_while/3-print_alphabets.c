@@ -5,18 +5,16 @@
  */
 int main(void)
 {
-	int lower = 97;
-	int upper = 65;
+	char uppercase = 'A';
+	char lowercase = 'a';
 
-	while (lower <= 122)
+	for (; uppercase <= 'Z'; uppercase++)
 	{
-		putchar(lower);
-		lower++;
+		putchar(uppercase);
 	}
-	while (upper <= 90)
+	for (; lowercase <= 'z'; lowercase++)
 	{
-		putchar(upper);
-		upper++;
+		putchar(lowercase);
 	}
 	putchar('\n');
 	return (0);
