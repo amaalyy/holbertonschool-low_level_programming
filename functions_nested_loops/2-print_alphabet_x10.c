@@ -10,9 +10,11 @@ void print_alphabet_x10(void)
 
 	for (; i <= 10; i++)
 	{
-	for (; lowercase <= 'z'; lowercase++)
+		for (; lowercase <= 'z'; lowercase++)
+		{
 		_putchar(lowercase);
-		_putchar('\n');
+		}
 		lowercase = 'a';
+		_putchar('\n');
 	}
 }
