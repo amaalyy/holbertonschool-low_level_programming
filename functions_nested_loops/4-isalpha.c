@@ -2,7 +2,7 @@
 /**
  * _isalpha - entry point
  *@c: isalpha
- * Return: 1 if c is lowercase otherwise 0
+ * Return: 1 if c is lowercase and uppercase otherwise 0
  */
 int _isalpha(int c)
 {

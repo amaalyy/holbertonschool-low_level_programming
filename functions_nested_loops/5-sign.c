@@ -2,7 +2,7 @@
 /**
  * print_sign - entry point
  *@n: print_sign
- * Return: 1 if c is lowercase otherwise 0
+ * Return: 1 if n is greater than zero 0 if n is zero -1 if n is less than zero
  */
 int print_sign(int n)
 {
