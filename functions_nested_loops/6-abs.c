@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_sign - entry point
+ * abc - entry point
  *@n: print_sign
  * Return: n if -
  */
