@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _isupper - entry point
+ * _isupper - if c is lowercase
  * @c: lowecase
  * Return: 1 if c is lowercase otherwise 0
  */
