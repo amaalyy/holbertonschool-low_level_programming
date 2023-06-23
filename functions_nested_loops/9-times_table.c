@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * times_table - entry point
- * Return: 0
+ * Return: 0.
  */
 void times_table(void)
 {
@@ -16,22 +16,23 @@ void times_table(void)
 		{
 			_putchar(r / 10 + '0');
 			_putchar(r % 10 + '0');
-			if (r >= 10)
+			if (i < 9)
 			{
-			_putchar(' ');
-			}
+				_putchar(',');
+				_putchar(' ');
+			}		
 		}
 		else
 		{
+			_putchar(' ');
 			_putchar(r + '0');
-			_putchar(' ');
-			_putchar(' ');
-		}
 			if (i < 9)
-		{
-			_putchar(',');
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
-			_putchar ('\n');
+				_putchar ('\n');
 }
 }
