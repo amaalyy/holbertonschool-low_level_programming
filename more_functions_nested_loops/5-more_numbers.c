@@ -1,26 +1,20 @@
 #include "main.h"
 /**
- * more_numbers - prints the numbers from 0 to 9 except 2 4
- * Return: void
+ * more_numbers - prints the numbers from 0 to 14 10 times
+ * Return: 0
  */
 void more_numbers(void)
 {
 	int n;
 	int m = 0;
+	char ch[] = "01234567891011121314";
 
-	for (; m <= 9; m++)
+	for (; m < 10; m++)
 	{
-		for (n = 0; n <= 14; n++)
-		if (n >= 10)
+		for (n = 0; n <= 21; n++)
 		{
-			_putchar(n / 10 + '0');
-			_putchar(n % 10 + '0');
+			_putchar(ch[n]);
 		}
-		else
-		{
-			_putchar(n + '0');
-		}
-		n = '0';
 		_putchar('\n');
 	}
 }
