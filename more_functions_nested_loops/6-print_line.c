@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_line - prints the numbers from 0 to 14 10 times
+ * print_line - draws a straight line
  * @n: number of times
  * Return: 0
  */
