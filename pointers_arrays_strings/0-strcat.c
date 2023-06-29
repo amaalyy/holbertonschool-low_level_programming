@@ -13,9 +13,10 @@ int s_lenght;
 for (d_lenght = 0; dest[d_lenght] != '\0'; d_lenght++)
 {
 }
-for (s_lenght = 0; src[s_lenght] != '\0'; s_lenght++)
+for (s_lenght = 0; src[s_lenght]; s_lenght++)
 {
-	
+	dest[d_lenght + s_lenght] = src[s_lenght];
 }
+dest[d_lenght + s_lenght] = src[s_lenght];
 return (dest);
 }
