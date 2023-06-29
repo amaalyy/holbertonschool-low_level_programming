@@ -17,6 +17,5 @@ for (s_lenght = 0; src[s_lenght]; s_lenght++)
 {
 	dest[d_lenght + s_lenght] = src[s_lenght];
 }
-dest[d_lenght + s_lenght] = src[s_lenght];
 return (dest);
 }
