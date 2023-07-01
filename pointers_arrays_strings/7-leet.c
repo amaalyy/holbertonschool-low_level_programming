@@ -18,6 +18,7 @@ char *leet(char *str)
 			if (str[i] == alf[j])
 			{
 				str[i] = num[j];
+				break;
 			}
 		}
 	}
