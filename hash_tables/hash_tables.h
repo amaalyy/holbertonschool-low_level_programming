@@ -1,9 +1,9 @@
 #ifndef HASH_TABLES
 #define HASH_TABLES
 
-#include <stdlib.h> /* NULL */
-#include <stdio.h> /* printf */
-#include <string.h> /* strlen */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
  * struct hash_node_s - Node of a hash table
@@ -21,7 +21,7 @@ typedef struct hash_node_s
 } hash_node_t;
 
 /**
- * struct hash_table_s - Hash table data structure
+ * struct hash_table_s - Hash table data structure 
  *
  * @size: The size of the array
  * @array: An array of size @size
@@ -34,7 +34,6 @@ typedef struct hash_table_s
 	hash_node_t **array;
 } hash_table_t;
 
-/* function prototypes */
 hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
