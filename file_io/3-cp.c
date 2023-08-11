@@ -1,45 +1,66 @@
 #include "main.h"
+
 /**
- * main - entry point
- * Description: copies the content of a file to another file
+ * __exit - prints error messages and exits with exit value
+ * @error: num is either exit value or file descriptor
+ * @s: str is a name, either of the two filenames
+ * @fd: file descriptor
+ * Return: 0
+ **/
+int __exit(int error, char *s, int fd)
+{
+	switch (error)
+	{
+	case 97:
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(error);
+	case 98:
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
+		exit(error);
+	case 99:
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
+		exit(error);
+	case 100:
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(error);
+	default:
+		return (0);
+	}
+}
+
+/**
+ * main - copies one file to another
  * @argc: arguments
  * @argv: arguments
- * Return:0
-*/
-int main(int argc, char **argv)
+ * Return: 0 ,97-100 (exit value errors)
+ */
+int main(int argc, char *argv[])
 {
-    int f, f1, i = 0;
-    char *bf;
+	int fd_1, fd_2, n_read, n_wrote;
+	char *buffer[1024];
 
-    if (argc > 3)
-    {
-        printf("Usage: cp file_from file_to\n");
-        exit(97);
-    }
-    f = open(argv[1], O_RDONLY);
-    if (f == -1)
-    {
-        printf("Error: Can't read from file NAME_OF_THE_FILE\n");
-        exit(98);
-    }
-    f1 = open(argv[2], O_WRONLY | O_TRUNC);
-    if (f1 == -1)
-    {
-        f1 = open(argv[2], O_CREAT | O_WRONLY, 0664);
-        if (f1 == -1)
-        {
-            printf("Error: Can't write to NAME_OF_THE_FILE\n");
-            exit(98);
-        }
-    }
-    bf = malloc(1024);
-    read(f, bf, 1024);
-    while (*bf != EOF)
-    {
-        i = i + 1024;
-        bf = realloc(bf, i);
-        read(f, bf, i);
-    }
-    dprintf(f1, "%s", bf);
-    return(0);
+	if (argc != 3)
+		__exit(97, NULL, 0);
+
+	fd_2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (fd_2 == -1)
+		__exit(99, argv[2], 0);
+
+	fd_1 = open(argv[1], O_RDONLY);
+	if (fd_1 == -1)
+		__exit(98, argv[1], 0);
+
+	while ((n_read = read(fd_1, buffer, 1024)) != 0)
+	{
+		if (n_read == -1)
+			__exit(98, argv[1], 0);
+
+		n_wrote = write(fd_2, buffer, n_read);
+		if (n_wrote == -1)
+			__exit(99, argv[2], 0);
+	}
+
+	close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
+	close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);
+	return (0);
 }
