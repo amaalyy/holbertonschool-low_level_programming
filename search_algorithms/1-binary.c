@@ -1,12 +1,12 @@
 #include "search_algos.h"
 /**
- * binary_search - 
- * @array: 
- * @size: 
- * @value: 
- * Return: 
+ * binary_search -  function that searches for a value in a sorted array
+ * @array:  pointer to the first element
+ * @size: number of elements
+ * @value: value to search
+ * Return: If value is not present in array or if array is NULL return -1
 */
-int bsearch(int *array, size_t size, int value)
+int binary_search(int *array, size_t size, int value)
 {
 	int low, high, mid, i;
 	low = 0;
@@ -19,7 +19,7 @@ int bsearch(int *array, size_t size, int value)
 		for (i = low + 1; i < high; i++)
 		{
 			printf(", %d", array[i]);
-			printf("\n")
+			printf("\n");
 		}
 		mid = (low + high) / 2;
 
