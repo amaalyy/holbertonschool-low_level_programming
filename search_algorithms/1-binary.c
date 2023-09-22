@@ -9,6 +9,7 @@
 int binary_search(int *array, size_t size, int value)
 {
 	int low, high, mid, i;
+	
 	low = 0;
 	high = size - 1;
 
@@ -16,7 +17,7 @@ int binary_search(int *array, size_t size, int value)
 	{
 		printf("Searching in array: %d", array[low]);
 
-		for (i = low + 1; i < high; i++)
+		for (i = low + 1; i < high + 1; i++)
 		{
 			printf(", %d", array[i]);
 			printf("\n");
