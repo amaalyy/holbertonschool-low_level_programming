@@ -8,31 +8,31 @@
 */
 int bsearch(int *array, size_t size, int value)
 {
-	return (bsearch(array, 0, size - 1, value));
-}
-/**
- * bsearch - 
- * @array:
- * @start:
- * @size:
- * @value:
- * Return: 
-*/
-int bsearch(int *array, int start, int size, int value)
-{
-	int mid = start + (size - start) / 2;
+	int low, high, mid, i;
+	low = 0;
+	high = size - 1;
 
-	if (size >= start)
+	while (low <= high)
 	{
-		if (array[mid] == value)
+		printf("Searching in array:%d", array[low]);
+		
+		for (i = low + 1; i < high; i++)
 		{
-			return (mid)
+			printf(", %d", array[i]);
+			printf("\n")
 		}
-		if (array[mid > value])
+		mid = (low + high) / 2;
+
+		if (value == array[mid])
 		{
-			return (bsearch(array, start, mid - 1, value));
+			return (mid);
 		}
-		return (bsearch(array, mid + 1, size, value));
+		if (value >array[mid])
+		{
+			high = mid - 1;
+		}
+		else
+		low = mid + 1;
 	}
 	return (-1);
 }
