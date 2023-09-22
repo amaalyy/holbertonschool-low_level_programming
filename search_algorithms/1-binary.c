@@ -14,8 +14,8 @@ int bsearch(int *array, size_t size, int value)
 
 	while (low <= high)
 	{
-		printf("Searching in array:%d", array[low]);
-		
+		printf("Searching in array: %d", array[low]);
+
 		for (i = low + 1; i < high; i++)
 		{
 			printf(", %d", array[i]);
